@@ -8,9 +8,9 @@
 
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost/music_manager</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">Korambol76</property>
+        <property name="connection.url">jdbc:postgresql://ekqlmdnedisguw:b74a8d8bf685aa7cedec6c3eef45cc289032f972e333576541ce3a525081fe9a@ec2-35-169-188-58.compute-1.amazonaws.com:5432/d4ch73var97dae</property>
+        <property name="connection.username">ekqlmdnedisguw</property>
+        <property name="connection.password">b74a8d8bf685aa7cedec6c3eef45cc289032f972e333576541ce3a525081fe9a</property>
 
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">1</property>
