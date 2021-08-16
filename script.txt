@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo -e "\nPlease, enter the number of characters to sample files\nwith a large number of characters in the file name:\n"
+
+read COUNT
+
+for i in $(find . -name *.java); do
+
+	if (( $(basename -s .java $i | wc -m) > ($COUNT+1) )); then
+
+		mkdir GreateNames
+		echo $(basename $i)>>GreateNames/greate_names.txt
+	else
+
+		mkdir LessNames
+		echo $(basename $i)>>LessNames/less_names.txt
+	fi
+done
+
+echo -e "\nYou can see the result of sorting:\n\nfilenames with more then $COUNT characters in the file:\nGreateNames/greate_names.txt\n\nthe rest of the filenames are saved in the file:\nLessNames/less_names.txt\n\nThank you"
