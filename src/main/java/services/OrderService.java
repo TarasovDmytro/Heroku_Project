@@ -4,6 +4,7 @@ import dao.OrderDao;
 import entities.Album;
 import entities.Order;
 import entities.Track;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class OrderService {
         return orderDao.addTracksToOrder(order, newTracks);
     }
 
-    public Order addAlbumsToOrder(Order order, List<Album> newAlbums) {
+    public Order addAlbumsToOrder(@NotNull Order order, @NotNull List<Album> newAlbums) {
 
         List<Album> albums = order.getAlbums();
         newAlbums.forEach(album -> {

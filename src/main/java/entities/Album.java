@@ -45,29 +45,27 @@ public class Album {
     @Override
     public String toString() {
 
-//        ArrayList<String> strArtists = artists.stream().map(Artist::getTitle).collect(Collectors.toCollection(ArrayList::new));
         ArrayList<String> strTracks = tracks.stream().map(Track::getTitle).collect(Collectors.toCollection(ArrayList::new));
         return "__________________________________________\n" +
                 getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
                 "title = " + title + ", " +
                 "price = " + price + ")" +
-//                ",\n artists = " + strArtists +
                 ",\n tracks = " + strTracks +
                 "\n------------------------------------------";
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Album album = (Album) o;
-
-        return Objects.equals(id, album.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 113065996;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Album album = (Album) o;
+//
+//        return Objects.equals(id, album.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 113065996;
+//    }
 }

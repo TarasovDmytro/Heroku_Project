@@ -26,7 +26,7 @@ public class Artist {
     @Column(name = "ARTIST_id")
     private int id;
 
-    @Column(name = "ARTIST_name")
+    @Column(name = "ARTIST_name", unique = true)
     private String title;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -51,17 +51,17 @@ public class Artist {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Artist artist = (Artist) o;
-
-        return Objects.equals(id, artist.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 787003919;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Artist artist = (Artist) o;
+//
+//        return Objects.equals(id, artist.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 787003919;
+//    }
 }

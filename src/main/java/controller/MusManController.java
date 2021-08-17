@@ -5,10 +5,7 @@ import entities.Artist;
 import entities.Customer;
 import entities.Order;
 import entities.Track;
-import services.AlbumService;
-import services.CustomerService;
-import services.OrderService;
-import services.TrackService;
+import services.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +19,7 @@ public class MusManController {
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     AlbumService albumService = new AlbumService();
+    ArtistService artistService = new ArtistService();
     CustomerService customService = new CustomerService();
     TrackService trackService = new TrackService();
     OrderService orderService = new OrderService();
@@ -221,7 +219,9 @@ public class MusManController {
                 Track newTrack = getTrackById(Integer.parseInt(trackId));
                 newTracks.add(newTrack);
             } else {
-                System.out.println(newTracks);
+
+                System.out.println("Add to album " + album.getTitle() + ":");
+                newTracks.forEach(System.out::println);
                 album = albumService.addTracksToAlbum(album, newTracks);
             }
         }

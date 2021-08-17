@@ -27,17 +27,18 @@ public class Order {
     @Column(name = "ORDER_price")
     private double price;
 
+    @NonNull
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "ORDER_ALBUM",
             joinColumns = @JoinColumn(name = "ORDER_id"),
             inverseJoinColumns = @JoinColumn(name = "ALBUM_id"))
     private List<Album> albums = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "ORDER_TRACK",
             joinColumns = @JoinColumn(name = "ORDER_id"),
             inverseJoinColumns = @JoinColumn(name = "TRACK_id"))
@@ -49,20 +50,20 @@ public class Order {
                 "id = " + id + ", " +
                 "title = " + title + ", " +
                 "price = " + price + ", " +
-                "customer = " + customer + ")";
+                "customer id = " + customer.getId() + ")";
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Order order = (Order) o;
-
-        return Objects.equals(id, order.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 737800560;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Order order = (Order) o;
+//
+//        return Objects.equals(id, order.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 737800560;
+//    }
 }

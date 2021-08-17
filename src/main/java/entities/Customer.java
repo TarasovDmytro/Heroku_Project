@@ -28,13 +28,13 @@ public class Customer {
     @Column(name = "CUSTOMER_title")
     private String title;
 
-    @Column(name = "CUSTOMER_email")
+    @Column(name = "CUSTOMER_email", unique = true)
     private String email;
 
     @Column(name = "CUSTOMER_address")
     private String address;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Order> orders = new ArrayList<>();
 
     public Customer(String title, String email, String address) {
@@ -52,21 +52,7 @@ public class Customer {
                 ", title='" + title + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", orders=" + ordersId +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Customer customer = (Customer) o;
-
-        return Objects.equals(id, customer.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 339958611;
-    }
 }

@@ -59,17 +59,17 @@ public class Track {
                 "artist = " + artist.getTitle() + ")";
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Track track = (Track) o;
-
-        return Objects.equals(id, track.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return 752605432;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Track track = (Track) o;
+//
+//        return Objects.equals(id, track.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 752605432;
+//    }
 }

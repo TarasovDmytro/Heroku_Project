@@ -3,6 +3,7 @@ package services;
 import dao.CustomerDao;
 import entities.Customer;
 import entities.Order;
+import lombok.val;
 
 import java.util.List;
 
@@ -16,13 +17,13 @@ public class CustomerService {
 
         if (customers.isEmpty()) {
             customDao.createInstance(customer);
-        }
-        for (Customer currentCustomer : customers) {
-            if (currentCustomer.getEmail().equals(customer.getEmail())) {
-                customer = currentCustomer;
-            } else {
-                customDao.createInstance(customer);
+        } else {
+            for (Customer curCustomer : customers) {
+                if (curCustomer.getEmail().equals(customer.getEmail())) {
+                    customer = curCustomer;
+                }
             }
+            if (customer.getId() == 0) customDao.createInstance(customer);
         }
         return customer;
     }
@@ -31,15 +32,14 @@ public class CustomerService {
 
         customer = customDao.getInstanceById(customer.getId());
         List<Order> orders = customer.getOrders();
-        if (orders.isEmpty()){
+        if (orders.isEmpty()) {
+
             System.out.println("\nYou have no orders yet");
         } else {
 
             System.out.println("\nYour orders:\n");
             orders.forEach(order -> {
                 System.out.println(order);
-                order.getAlbums().forEach(System.out::println);
-                order.getTracks().forEach(System.out::println);
             });
         }
     }
