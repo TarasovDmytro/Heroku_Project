@@ -6,7 +6,7 @@ import entities.Track;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.jetbrains.annotations.NotNull;
-import api.HibernateUtil;
+import utils.HibernateUtil;
 
 import java.util.List;
 

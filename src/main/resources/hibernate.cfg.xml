@@ -3,7 +3,6 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-
     <session-factory>
 
         <!-- JDBC Database connection settings -->
@@ -35,7 +34,6 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <property name="hibernate.jdbc.batch_size">50</property>
 
-
         <mapping class="entities.Album"/>
         <mapping class="entities.Artist"/>
         <mapping class="entities.Track"/>
@@ -43,5 +41,4 @@
         <mapping class="entities.Customer"/>
 
     </session-factory>
-
 </hibernate-configuration>

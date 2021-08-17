@@ -4,7 +4,7 @@ import entities.Artist;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import api.HibernateUtil;
+import utils.HibernateUtil;
 
 import java.util.List;
 

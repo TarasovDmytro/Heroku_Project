@@ -5,7 +5,7 @@ import entities.Artist;
 import entities.Track;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import api.HibernateUtil;
+import utils.HibernateUtil;
 
 import java.util.List;
 
