@@ -1,14 +1,12 @@
 package dao;
 
 import entities.Album;
-import entities.Customer;
 import entities.Order;
 import entities.Track;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import org.jetbrains.annotations.NotNull;
-import utils.HibernateUtil;
+import api.HibernateUtil;
 
 import java.util.List;
 
