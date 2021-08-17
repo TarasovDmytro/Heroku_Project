@@ -80,7 +80,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>App</mainClass>
+                            <mainClass>MusicManagerAPI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
