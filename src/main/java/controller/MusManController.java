@@ -43,6 +43,7 @@ public class MusManController {
                      enter 3  if you want to see your orders
                      enter 4  if you want to see all tracks
                      enter 5  if you want to see all albums
+                     enter 0  if you want to finish
                      _______________________________________
                     """);
 
