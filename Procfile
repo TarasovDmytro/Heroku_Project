@@ -1,1 +1,1 @@
-web: java -jar target/musicManager-1.0-SNAPSHOT-jar-with-dependencies.jar
+web: java -java src/main/java/MusicManagerAPI.java
